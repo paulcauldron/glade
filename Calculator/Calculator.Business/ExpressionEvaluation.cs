@@ -14,14 +14,21 @@ namespace Calculator.Business
         /// <returns>bool</returns>
         public static bool Validate(string input)
         {
-            input = input.Trim();
-
-            if (Regex.IsMatch(input, @"[^0-9\/\-\)\(\*\+ \s]"))//If any character not in patter, then invalid
+            try
             {
-                return false;
-            }
+                input = input.Trim();
 
-            return true;
+                if (Regex.IsMatch(input, @"[^0-9\/\-\)\(\*\+ \s]"))//If any character not in patter, then invalid
+                {
+                    return false;
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error validating string", ex);
+            }
         }
 
         /// <summary>
@@ -31,98 +38,109 @@ namespace Calculator.Business
         /// <returns>double</returns>
         public static double Evaluate(string input)
         {
-            Stack<Double> stackValues = new Stack<Double>();
-            Stack<string> stackOperators = new Stack<string>();
-            //Stack<double> stackOutput = new Stack<double>();
-            string buildOperand = string.Empty;
-
-            char[] inputCharArray = input.Trim().ToCharArray();
-
-            for (int i = 0; i < inputCharArray.Length; i++)
+            try
             {
-                if (inputCharArray[i] == ' ')
-                    continue;
-                if (Char.IsNumber(inputCharArray[i]))
-                {
-                    buildOperand = inputCharArray[i].ToString();
+                Stack<Double> stackValues = new Stack<Double>();
+                Stack<string> stackOperators = new Stack<string>();
+                //Stack<double> stackOutput = new Stack<double>();
+                string buildOperand = string.Empty;
 
-                    for (int j = i + 1; j < inputCharArray.Length; j++)
+                char[] inputCharArray = input.Trim().ToCharArray();
+
+                for (int i = 0; i < inputCharArray.Length; i++)
+                {
+                    if (inputCharArray[i] == ' ')
+                        continue;
+                    if (Char.IsNumber(inputCharArray[i]))
                     {
-                        if ((Char.IsNumber(inputCharArray[j])) && inputCharArray[j] != ' ')
+                        buildOperand = inputCharArray[i].ToString();
+
+                        for (int j = i + 1; j < inputCharArray.Length; j++)
                         {
-                            buildOperand = string.Concat(buildOperand, inputCharArray[j]);
-                            if (j == inputCharArray.Length - 1)// EOL
+                            if ((Char.IsNumber(inputCharArray[j])) && inputCharArray[j] != ' ')
+                            {
+                                buildOperand = string.Concat(buildOperand, inputCharArray[j]);
+                                if (j == inputCharArray.Length - 1)// EOL
+                                {
+                                    i = j;
+                                }
+                            }
+                            else
                             {
                                 i = j;
+                                break;
                             }
                         }
-                        else
+                        stackValues.Push(Double.Parse(buildOperand));
+                    }
+                    // Hold all operations till we encounter a bracket close
+                    if (Regex.IsMatch(inputCharArray[i].ToString(), "[(+/*-]"))
+                    {
+                        // Check Precedence, If current has lower precedence then execute last operations of greater precendence and proceed with stacking
+                        while (stackOperators.Count > 0 && IsCurrentOperatorLowerPrecedence(inputCharArray[i].ToString(), stackOperators.Peek()) && (stackValues.Count >= 2))
                         {
-                            i = j;
-                            break;
+                            double op2 = stackValues.Pop();
+                            double op1 = stackValues.Pop();
+                            string operation = stackOperators.Pop().ToString();
+                            stackValues.Push(Math.Round(MathOperation(op1, op2, operation), 3));
                         }
-                    }
-                    stackValues.Push(Double.Parse(buildOperand));
-                }
-                // Hold all operations till we encounter a bracket close
-                if (Regex.IsMatch(inputCharArray[i].ToString(), "[(+/*-]"))
-                {
-                    // Check Precedence, If current has lower precedence then execute last operations of greater precendence and proceed with stacking
-                    while (stackOperators.Count > 0 && IsCurrentOperatorLowerPrecedence(inputCharArray[i].ToString(), stackOperators.Peek()) && (stackValues.Count >= 2))
-                    {
-                        double op2 = stackValues.Pop();
-                        double op1 = stackValues.Pop();
-                        string operation = stackOperators.Pop().ToString();
-                        stackValues.Push(Math.Round(MathOperation(op1, op2, operation), 3));
-                        //stackOperators.Push(inputCharArray[i].ToString());
-                    }
-                    //else
-                    //{
-                    stackOperators.Push(inputCharArray[i].ToString());
-                    //}
-                }
 
-                // If Right bracket, pop operations holder stack and move to main postFixStack
-                if (inputCharArray[i].ToString() == ")")
-                {
-                    while (stackOperators.Count > 0)
+                        stackOperators.Push(inputCharArray[i].ToString());
+
+                    }
+
+                    // If Right bracket, pop operations holder stack and move to main postFixStack
+                    if (inputCharArray[i].ToString() == ")")
                     {
-                        string operation = stackOperators.Pop();
-                        if (operation != "(")
+                        while (stackOperators.Count > 0)
                         {
-                            if (stackValues.Count >= 2)
+                            string operation = stackOperators.Pop();
+                            if (operation != "(")
                             {
-                                double op2 = stackValues.Pop();
-                                double op1 = stackValues.Pop();
-                                stackValues.Push(Math.Round(MathOperation(op1, op2, operation), 3));
+                                if (stackValues.Count >= 2)
+                                {
+                                    double op2 = stackValues.Pop();
+                                    double op1 = stackValues.Pop();
+                                    stackValues.Push(Math.Round(MathOperation(op1, op2, operation), 3));
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            // End of input string
-            while (stackOperators.Count > 0)
-            {
-                string operation = stackOperators.Pop();
-                if (operation != "(")
+                // End of input string
+                while (stackOperators.Count > 0)
                 {
-                    if (stackValues.Count >= 2)
+                    string operation = stackOperators.Pop();
+                    if (operation != "(")
                     {
-                        double op2 = stackValues.Pop();
-                        double op1 = stackValues.Pop();
-                        stackValues.Push(Math.Round(MathOperation(op1, op2, operation), 3));
+                        if (stackValues.Count >= 2)
+                        {
+                            double op2 = stackValues.Pop();
+                            double op1 = stackValues.Pop();
+                            stackValues.Push(Math.Round(MathOperation(op1, op2, operation), 3));
+                        }
                     }
                 }
-            }
- 
-            if (stackValues.Count == 1)
-                return stackValues.Pop();
-            else
-                return 0;
 
+                if (stackValues.Count == 1)
+                    return stackValues.Pop();
+                else
+                    return 0;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Error evaluating string", ex);
+            }
         }
 
+        /// <summary>
+        /// Math operations
+        /// </summary>
+        /// <param name="operand1">double</param>
+        /// <param name="operand2">double</param>
+        /// <param name="operation">string</param>
+        /// <returns>double</returns>
         private static double MathOperation(double operand1, double operand2, string operation)
         {
             double result = 0;
@@ -153,13 +171,17 @@ namespace Calculator.Business
             }
         }
 
+        /// <summary>
+        /// Compares two operators and returns their precedence per BODMAS rules
+        /// </summary>
+        /// <param name="opCurrent">string</param>
+        /// <param name="opLast">string</param>
+        /// <returns>bool</returns>
         private static bool IsCurrentOperatorLowerPrecedence(string opCurrent, string opLast)
         {
             if (opCurrent == "(" || opCurrent == ")" || opLast == "(") return false;
-            Dictionary<string, int> opPrecedenceDefinition = new Dictionary<string, int>() { { "-", 1 }, { "+", 1}, { "*", 3 }, { "/", 4 } };
+            Dictionary<string, int> opPrecedenceDefinition = new Dictionary<string, int>() { { "-", 1 }, { "+", 1 }, { "*", 3 }, { "/", 4 } };
             return opPrecedenceDefinition[opCurrent] < opPrecedenceDefinition[opLast];
         }
     }
-
-
 }

@@ -3,3 +3,8 @@ c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator.Busi
 c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator.Business\obj\Debug\Calculator.Business.dll
 c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator.Business\obj\Debug\Calculator.Business.pdb
 c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator.Business\obj\Debug\Calculator.Business.csprojResolveAssemblyReference.cache
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator.Business\bin\Debug\Calculator.Business.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator.Business\bin\Debug\Calculator.Business.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator.Business\obj\Debug\Calculator.Business.csprojResolveAssemblyReference.cache
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator.Business\obj\Debug\Calculator.Business.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator.Business\obj\Debug\Calculator.Business.pdb

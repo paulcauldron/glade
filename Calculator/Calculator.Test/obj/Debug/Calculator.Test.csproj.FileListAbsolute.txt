@@ -7,3 +7,12 @@ c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator.Test
 c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator.Test\obj\Debug\Calculator.Test.csprojResolveAssemblyReference.cache
 c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator.Test\obj\Debug\Calculator.Test.dll
 c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator.Test\obj\Debug\Calculator.Test.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator.Test\bin\Debug\Calculator.Test.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator.Test\bin\Debug\Calculator.Test.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator.Test\bin\Debug\Calculator.Business.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator.Test\bin\Debug\Calculator.Business.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator.Test\obj\Debug\Calculator.Test.csprojResolveAssemblyReference.cache
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator.Test\obj\Debug\Calculator.Test.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator.Test\obj\Debug\Calculator.Test.pdb

@@ -44,7 +44,7 @@ namespace Calculator
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                Console.WriteLine("Error Encountered: " + ex.Message); // Ideally log, and not displayed
                 Console.ReadLine();
             }
         }

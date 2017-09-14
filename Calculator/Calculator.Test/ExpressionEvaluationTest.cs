@@ -155,7 +155,7 @@ namespace Calculator.Test
             Assert.AreEqual(0.35, outputValue);
         }
 
-        #endregion
+      
 
         [TestMethod]
         public void testevaluation_expressionlargenumbers_returns_validnegative()
@@ -166,8 +166,8 @@ namespace Calculator.Test
 
             double outputValue = ExpressionEvaluation.Evaluate(input);
             Assert.AreEqual(350, outputValue);
-
         }
-
+        
+        #endregion
     }
 }

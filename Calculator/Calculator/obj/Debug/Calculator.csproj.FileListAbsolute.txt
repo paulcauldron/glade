@@ -6,3 +6,11 @@ c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator\bin\
 c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
 c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator\obj\Debug\Calculator.exe
 c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator\bin\Debug\Calculator.Business.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator\bin\Debug\Calculator.Business.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\GitRepo\glade\Calculator\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
