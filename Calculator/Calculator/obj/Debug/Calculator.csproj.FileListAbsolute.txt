@@ -1,0 +1,8 @@
+c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator\bin\Debug\Calculator.exe.config
+c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator\bin\Debug\Calculator.exe
+c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator\bin\Debug\Calculator.pdb
+c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator\bin\Debug\Calculator.Business.dll
+c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator\bin\Debug\Calculator.Business.pdb
+c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator\obj\Debug\Calculator.exe
+c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator\obj\Debug\Calculator.pdb

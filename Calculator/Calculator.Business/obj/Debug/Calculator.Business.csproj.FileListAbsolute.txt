@@ -1,0 +1,5 @@
+c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator.Business\bin\Debug\Calculator.Business.dll
+c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator.Business\bin\Debug\Calculator.Business.pdb
+c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator.Business\obj\Debug\Calculator.Business.dll
+c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator.Business\obj\Debug\Calculator.Business.pdb
+c:\users\samara\documents\visual studio 2015\Projects\Calculator\Calculator.Business\obj\Debug\Calculator.Business.csprojResolveAssemblyReference.cache
